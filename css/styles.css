@@ -26,13 +26,11 @@ body {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     text-align: center;
     background-color: #61768C;
+
     
     & a {
         text-decoration: none;
-        color: white;
-        padding-left: .8rem;
-        
-        
+        color: white;    
     }
     
     & a#current {
