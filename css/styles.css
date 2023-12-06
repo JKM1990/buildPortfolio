@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Oswald&display=swap');
+/* font-family: 'Oswald', sans-serif; */
+body {
+    color: rgba(93,93,93);
+}
+.g-gridBase {
+    
+    display: grid;
+    margin: 5vh auto;
+    width: 90%;
+    
+    grid-gap: 1.5rem;
+    
+}
+
+
+.g-navbar {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+    grid-area: navbar;
+
+}
+
+.g-navItems {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    text-align: center;
+    background-color: #61768C;
+    
+    & a {
+        text-decoration: none;
+        color: white;
+        padding-left: .8rem;
+        
+        
+    }
+    
+    & a#current {
+        color:rgb(254, 221, 193);
+        
+    }
+    
+}
+
+.g-footer {
+    grid-area: footer;
+    font-family: 'Lora', serif;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    background-color: #d3d3d3;
+    & .socials {
+        justify-self: center;
+        align-self: center;
+        padding: 20px;
+    
+        & i {
+            margin-left:5px;
+        }
+        & a:visited {
+            color: rgb(7, 98, 200);
+        }
+    }
+}
+/* home page */
+#p-home {
+    
+    display: grid;
+    grid-template-areas: 
+    "navbar navbar navbar"
+    "aside aside aside"
+    "footer footer footer";
+    
+    & #s-aboutme {
+        font-family: 'Lora', serif;
+        font-size: 0.7rem;
+        display:grid;
+        
+        grid-area: aside;
+        grid-template-columns: 1fr 2fr;
+        
+        & p {
+            font-size: 1rem;
+            
+        }
+        & div {
+            align-self: center;
+            min-width: 290px;
+        }
+        
+        & h2 {
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        & #mypic img{
+            border-radius: 10px;
+        }
+    }
+}
+
+/* Resume page */
+#p-resume {
+
+    font-family: 'Lora', serif;
+    display: grid;
+    grid-template-areas: 
+    "navbar navbar"
+    "header header"
+    "resume resume"
+    "footer footer";
+    
+    & #s-header {
+        grid-area: header;
+        text-align: center;
+        
+    }
+
+    & #s-resume {
+        grid-area: resume;
+        text-align: center;
+        & li {
+            list-style-type: none; /* remove the bullets */
+        }
+    }
+}
+
+/* web app and other samples page */
+#p-samples {
+    display: grid;
+    grid-template-areas:
+    "navbar"
+    "webApps"
+    "footer";
+
+    & #s-webAppsContainer {
+        font-family: 'Lora', serif;
+        grid-area: webApps;
+        display: grid;
+        grid-template-columns: 1fr;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        
+    }
+    
+    & .webAppsSamples {
+        display: grid;
+        grid-template-columns: 7rem 1fr 2fr 1fr;
+        grid-template-areas: "pic title info stack";
+        align-items: center;
+        padding-bottom: 1rem;
+        text-align: center;
+
+        & .samplePic {
+            border-radius:10px;
+            grid-area: pic;
+        }
+
+        
+        & .sampleTitle {
+            font-weight: 600;
+            grid-area: title;
+        }
+
+        & .info {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            grid-area: info;
+        }
+
+        & .stack {
+            grid-area: stack;
+        }
+
+        & .descript {
+            font-weight: 600;
+        }
+        
+
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    #p-home {
+        grid-template-columns: auto;
+        grid-template-areas:
+        "navbar"
+        "aside"
+        "footer";
+        & #s-aboutme {
+            grid-template-columns: 1fr;
+            & #mypic {
+                text-align: center; /* center the pic */
+                & img {
+                    width: 182px; /* resize img */
+                    height: 302px;
+                }
+            }
+        }
+
+    }
+
+}
+/* 
+@media screen and (max-width: 600px) {
+
+    .webAppsSamples {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        "pic title"
+        "info stack";
+
+    }
+} */
