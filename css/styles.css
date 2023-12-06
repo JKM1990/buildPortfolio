@@ -45,7 +45,6 @@ body {
     font-family: 'Lora', serif;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
     background-color: #d3d3d3;
     & .socials {
         justify-self: center;
